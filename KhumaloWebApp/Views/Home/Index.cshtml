@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - KhumaloCraft Emporium</title>
+    <style>
+        /* Custom styles for the body */
+        body {
+            background-color: black; /* Set the background color to black */
+            color: white; /* Set the text color to white for better contrast */
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Set a default font family */
+        }
+
+        /* Custom styles for the container */
+        .container {
+            width: 100%; /* Set the width to 100% */
+            position: relative; /* Make the container a positioning context */
+            text-align: center; /* Center the text horizontally */
+            color: darkred; /* Text color */
+        }
+
+            /* Custom styles for the image */
+            .container img {
+                width: 100%; /* Set the width to 100% */
+                height: auto; /* Set the height to auto to maintain aspect ratio */
+            }
+
+        /* Custom styles for text */
+        .heading {
+            font-size: 24px; /* Adjust font size */
+            font-family: Arial, sans-serif; /* Change font family */
+            font-weight: bold; /* Optionally adjust font weight */
+            margin-bottom: 20px; /* Add spacing */
+            position: absolute; /* Position the heading relative to the container */
+            top: 5%; /* Position the heading at the vertical center */
+            left: 50%; /* Position the heading at the horizontal center */
+            transform: translate(-50%, -50%); /* Center the heading */
+        }
+
+        .paragraph {
+            font-size: 16px; /* Adjust font size */
+            font-family: 'Comic Sans MS', sans-serif; /* Change font family */
+            position: absolute; /* Position the paragraph relative to the container */
+            bottom: 20px; /* Position the paragraph at the bottom */
+            top: 20%;
+            left: 50%; /* Position the paragraph at the horizontal center */
+            transform: translateX(-50%); /* Center the paragraph horizontally */
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for image and text -->
+    <div class="container">
+        <!-- Static Image -->
+        <img src="/images/WelcomePage.jpg" alt="Cloud Image">
+        <!-- Heading -->
+        <h2 class="heading">Welcome to KhumaloCraft Emporium</h2>
+        <!-- Paragraph -->
+        <p class="paragraph">At KhumaloCraft Emporium, we celebrate the beauty and artistry of handcrafted goods. Our platform connects you with talented artisans from around the world, offering unique and exquisite items that tell a story. Whether you're looking for a special gift or a unique addition to your home, you'll find a diverse selection of handmade treasures here. Explore our collections and discover the craftsmanship that makes each piece truly one-of-a-kind.</p>
+    </div>
+</body>
+</html>

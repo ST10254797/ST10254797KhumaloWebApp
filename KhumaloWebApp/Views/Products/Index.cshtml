@@ -1,0 +1,70 @@
+﻿@model IEnumerable<KhumaloWebApp.Models.Products>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<style>
+    body {
+        background-color: #E5EFE4;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12 text-center">
+        <br />
+        <br />
+        <br />
+        <h1>Our Products</h1>
+        <br />
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Create New Product</a>
+        </p>
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <!-- Adjust the column size to allow three or four cards per row -->
+            <div class="col-md-4 mb-3">
+                <!-- Use col-md-3 for four cards per row -->
+                <div class="card mb-5">
+                    <h3 class="card-header">Product ID: @item.ProductId</h3> <!-- Display Product ID here -->
+                    <!-- Card image or placeholder -->
+                    @if (!string.IsNullOrEmpty(item.ImageUrl))
+                    {
+                        <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" />
+                    }
+                    else
+                    {
+                        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
+                            <rect width="100%" height="100%" fill="#868e96"></rect>
+                            <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                        </svg>
+                    }
+
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                        <h6 class="card-subtitle text-muted">Price: @Html.DisplayFor(modelItem => item.Price)</h6>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                        <p class="card-text">Available Quantity: @Html.DisplayFor(modelItem => item.AvailabilityNumber)</p>
+                    </div>
+
+                    <div class="card-footer text-muted">
+                        <div class="d-flex justify-content-center">
+                            <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-sm btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</a>
+                            <a href="/Order/OrderForm" class="btn btn-sm btn-success"><i class="fas fa-shopping-cart"></i> Purchase</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

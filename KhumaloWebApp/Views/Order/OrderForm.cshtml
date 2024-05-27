@@ -1,0 +1,41 @@
+﻿@model KhumaloWebApp.Models.Order
+
+@{
+    ViewData["Title"] = "Order Form";
+}
+
+<h2>Order Form</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="CreateOrder">
+            <div class="form-group">
+                <label asp-for="ProductId" class="control-label">Product</label>
+                <input asp-for="ProductId" class="form-control" placeholder="Enter Product ID" />
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label">Quantity</label>
+                <input asp-for="Quantity" class="form-control" placeholder="Enter Quantity" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPrice" class="control-label">Total Price</label>
+                <input asp-for="TotalPrice" class="form-control" placeholder="Total Price" readonly />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDate" class="control-label">Order Date</label>
+                <input asp-for="OrderDate" class="form-control" placeholder="Order Date" readonly />
+                <span asp-validation-for="OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="OrderHistory" class="btn btn-secondary">Back to Order History</a>
+</div>
